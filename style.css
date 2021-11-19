@@ -48,15 +48,20 @@
     li{
         text-align: center;
     }
-    #home{
+    #home:before   {
         height: 600px;
-        width: 50%;
+        width: 4%;
     }
 }
 /*home section */
 #home{
     display: flex;
     flex-direction: column;
+}
+.headings{
+    font-family: lizaa;
+}
+#home::before{
     content: "";
     position: absolute;
     top: 0;
@@ -68,11 +73,5 @@
     background-size: cover;
     height: 900px;
     width: 100%;
-    z-index: -2;
-}
-.headings{
-    font-family: lizaa;
-}
-#home::before{
-
+    z-index: -1;
 }
