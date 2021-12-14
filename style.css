@@ -4,6 +4,9 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+h2{
+    overflow: hidden;
+}
 @font-face{
     font-family: Lizaa;
     src: url("GT-Super-Text-Black-Trial.otf");
@@ -17,33 +20,46 @@
     top: 0;
     overflow: hidden;
     width: 100%;
+    z-index: 11;
+    margin-top: -2px;
 }
 
 .nav ul{
     display: flex;
-    list-style: none;
     margin: 30px 0px;
 }
 
 .nav ul li{
     font-size: 1.1rem;
     font-weight: bold;
+    overflow: hidden;
+    border-radius: 5px;   
+    border: 2px solid transparent;
 }
-
 .nav ul li a{
     text-decoration: none;
     color: white;
-    padding: 2px 25px;
+    padding: 10px 25px;
     transition: all .5s ease;
+    transition: .5s ease;
     font-size: 20px;
+    overflow: hidden;
 }
 .nav ul li a:hover{
     background-color: white;
     color: black;
+
 }
-#Lizatext{
-    margin-left: 20px;
+nav ul li:hover{
+    border: 2px solid black;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all .5s ease;
 }
+#Lizatext {
+    margin-left: 30px;
+}
+
 /*home section */
 .headings{
     font-family: lizaa;
@@ -52,13 +68,14 @@
 }
 #underheading{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 20px; 
     text-align: center;
     font-style: oblique;
 }
 #home{
     position:relative;
     top: 0;
+    overflow: hidden;
     right: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) ,url('img/Background1.jpg') no-repeat center ;
     -webkit-background-size: cover;
@@ -73,8 +90,34 @@
     height: 937px;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: white;  
+    animation-iteration-count: 1;
+    animation: cinematic-camera 5s cubic-bezier(0.6, 1, 0.4, 1);
 }
+    @keyframes cinematic-camera {
+
+      /* 
+        Move the fading to the containing element as to not break inside 3D transforms. 
+        See: https://css-tricks.com/things-watch-working-css-3d/
+      */
+      from{
+          opacity: .7;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    #home:after {
+      content: "";
+      background: linear-gradient(to bottom, #000, #0000 20%, #0000 80%, #000);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+
 .main{
     display: flex;
     flex-direction: column;
@@ -85,7 +128,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: -2;
 }
 
 .container{
@@ -103,17 +145,76 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
     height: 100%;
+    overflow: hidden;
 }
 .left{
     width: 100%;
     padding: 0px, 0px;
     background-color: black;
+    
 }
 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.image1 img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+}
+.right .imagetip{
+    position: relative;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    height: 60px;
+    bottom: 75px;
+    -webkit-transition: all 0.3s ease-in;
+    background-color: white;
+    color: black;
+    z-index: 10; 
+    left: -500px;
+    display: block;
+    padding-top: 8px;
+    border-radius: 5px;
+}
+.left .imagetip{
+    position: relative;
+    right: 0;
+    width: 50%;
+    overflow: hidden;
+    height: 60px;
+    bottom: 75px;
+    -webkit-transition: all 0.3s ease-in;
+    background-color: white;
+    color: black;
+    z-index: 10; 
+    right: -1000px;
+    display: block;
+    padding-top: 8px;
+    border-radius: 5px;
+}
+.imagetip h2{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: lizaa;
+    font-style: oblique;
+
+}
+.right:hover .imagetip{
+    transform: translateX(500px);
+}
+.left:hover .imagetip{
+    transform: translateX(-500px);
+}
+
 .centered{
     position: relative;
     top: 50%;
@@ -125,5 +226,132 @@ img{
 }
 .right{
     height:100%;
+    padding: 0px, 0px;
     background-color: black;
+}
+
+.text{
+    color:white;
+    width: 100%;
+}
+.left #titletext {
+    font-family: lizaa;
+    font-size: 60px;
+    width: 100%;
+    padding-top: 80px;
+    padding-left: 50px;
+    overflow: hidden;
+    text-align: left;
+}
+.right #titletext {
+    font-family: lizaa;
+    font-size: 60px;
+    width: 100%;
+    padding-top: 80px;
+    padding-right: 50px;
+    overflow: hidden;
+    text-align: right;
+}
+.left #undertext{
+    padding-left: 50px;
+    text-align: left;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    padding-right: 50px;
+}
+
+.right #undertext{
+    padding-right: 50px;
+    text-align: right;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    padding-left: 50px; 
+}
+.left #link{
+    list-style: none;
+    text-decoration: none;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content:left;
+    padding-left: 50px;
+    padding-top: 300px;
+}
+.right #link{
+    list-style: none;
+    text-decoration: none;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content:right;
+    padding-right: 50px;
+    padding-top: 300px;
+}
+
+#link a{
+    padding: 10px;
+    font-style: bold;
+    font-family: lizaa;
+    background-color: white;
+    text-decoration: none 10px;
+    font-size: 30px;
+    color: black;
+    z-index: 10;
+    transition: .5s ease;
+    border-radius: 5px;
+    border: 2px solid black;
+    position: relative;
+}
+#link a:hover{
+    border: 2px solid white;
+    color: white;
+}
+
+#link a:before{
+    transition: .8s ease;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    opacity: 0;
+    content: "";
+    color: white;
+    background-color: black;
+}
+
+#link a:hover:before{
+    transition: .8s ease;
+    bottom: 0;
+    top: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+
+/*Foote section*/
+#footer{
+    background-color: black;
+}
+
+.verklaring{
+    text-decoration: underline;
+    color: darkgray;
+    justify-content: center;
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 20px;
+    width: 50%;
+    float: left;
+}
+.cookies{
+    text-decoration: underline;
+    color: darkgray;
+    justify-content: center;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+    width: 50%;
 }

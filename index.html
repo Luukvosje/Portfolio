@@ -9,15 +9,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" media="screen and (max-width: 800px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 530px)" href="phone.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
   </head>
-<body>
+<body> 
   <nav class="nav">
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">About me</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a id="Lizatext" href="#">Liza Duymelinck</a></li>
+      <div id="Lizatext">
+        <li><a href="#">Liza Duymelinck</a></li>
+      </div>
     </ul>
   </nav>
   <section id="home">
@@ -29,24 +33,58 @@
   <section id="middle">
       <div class="row">
         <div class="col-sm left">
-          <div class="centered">
-          <img src="img/newPhoto1.jpeg" alt="liza">
+          <div class="text">
+            <h2 id="titletext">Portfolio</h2>
+            <p id="undertext">kom meer over mij, door een kijkje te nemen in mijn portfolio. Waar ik je mee neem in mijn gedachten gang en proces om tot iets te komen</p>
           </div>
+          <li id="link"><a href="#">bekijk mijn portfolio</a></li>
         </div> 
         <div class="col-sm right">
+            <img class="image1" src="img/newPhoto1.jpeg" alt="liza">
+            <div class="imagetip">
+              <h2>instagram : @behind.liza</h2>
+            </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm left">
-          <div class="centered">
-          
-          </div>
+        <div class="col-sm left image2">
+            <img src="img/IMG_3986.jpeg" alt="liza">
+            <div class="imagetip">
+              <h2>Mooie foto ❤</h2>
+            </div>
         </div> 
         <div class="col-sm right">
-          <img src="img/IMG_3986.jpeg" alt="liza">
+          <div class="text">
+            <h2 id="titletext">About me</h2>
+            <p id="undertext">wil je weten wie ik ben, wat ik doe en wat mijn passies zijn? lees dan verder. ik vertel je wat over mij</p>
+          </div>
+          <li id="link"><a href="#">meer over mij</a></li>
         </div>
+        </div>
+        <div class="row">
+          <div class="col-sm left">
+            <div class="text">
+              <h2 id="titletext">Liza Duymelinck</h2>
+              <p id="undertext">Hi ik ben Liza. Leuk dat je een kijkje neemt op mijn website:)
+                Wil je weten hoe ik werk? Bekijk mijn online portfolio en ontdek welke resultaten je kunt verwachten als wij gaan samenwerken.
+              </p>
+            </div>
+          </div> 
+          <div class="col-sm right">
+              <img src="img/IMG_3343.jpeg" alt="liza">
+              <div class="imagetip">
+                <h2>Mooie foto ❤</h2>
+            </div>
+          </div>
       </div>
   </section>
-  <h2>lizaaa</h2>
+  <section id="footer">
+    <div class="verklaring">
+      <p>Privacy Verklaring</p> 
+    </div>
+    <div class="cookies">
+      <p>Cookie-instellingen</p> 
+    </div>
+  </section>
 </body>
 </html>

@@ -1,0 +1,13 @@
+.row{
+    height: 400px;
+}
+.nav ul li{
+    width: 100%;
+    font-size: 1px;
+    margin: 10px 0px;
+}
+
+.headings{
+    font-size: 30px;
+}
+
